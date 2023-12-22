@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Concelhos</h1>
+
+<table>
+  <tr>
+    <th>
+      Código
+    </th>
+    <th>
+      Designação
+    </th>
+    <th>
+      Nº de recintos
+    </th>
+    <th>
+      Distrito
+    </th>
+  </tr>
+  {% for c in concelhos %}
+  <tr>
+    <td>
+      {{ c.cod }}
+    </td>
+    <td>
+      <a href="/concelhos/{{ c.cod }}/">{{ c.designacao }}</a>
+    </td>
+    <td>
+      {{ c.num_recintos }}
+    </td>
+    <td>
+        {{ c.distrito }}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+
+{% endblock %}

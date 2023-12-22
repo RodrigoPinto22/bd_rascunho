@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>{{ concelho.designacao }}</h1>
+
+<table>
+  <tr>
+    <th>
+      Id
+    </th>
+    <th>
+      Nome
+    </th>
+  </tr>
+  {% for r in recintos %}
+  <tr>
+    <td>
+      {{ r.id }}
+    </td>
+    <td>
+      <a href="/concelhos/{{ r.id }}/">{{ r.nome }}</a>
+    </td>
+    {% endfor %}
+  </tr>
+</table>
+
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Cidadao</h1>
+
+<table>
+  <tr>
+    <th>
+      Id
+    </th>
+    <th>
+      Nome
+    </th>
+    <th>
+      sexo
+    </th>
+  </tr>
+  {% for c in cidadao %}
+  <tr>
+    <td>
+      {{ c.id }}
+    </td>
+    <td>
+      <a href="/cidadao/{{ c.id }}/">{{ c.nome }}</a>
+    </td>
+    <td>
+      {{ c.sexo }}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+
+{% endblock %}
